@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&family=Bungee&family=Caveat:wght@500&family=Comfortaa:wght@500&family=Indie+Flower&family=Josefin+Sans:wght@100&family=Koulen&family=Orbitron&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Kanit:wght@300&display=swap');
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+}
+
+.time{
+    font-size: 50px;
+    color: rgb(0, 255, 242);
+}
+
+.data-timer{
+    display: flex;
+    /* border: 1px solid #585353; */
+    flex-direction: row;
+    /* margin: 0px; */
+    border-radius: 6px;
+    padding: 45px;
+    margin-bottom: 51px;
+}
+.svg{
+    width: 140px;
+    /* display: none; */
+}
+
+.heading{
+    font-size: 30px;
+    font-family: 'Koulen', cursive;
+    margin: 20px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.App{
+    margin: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.big-container{
+    /* border: 1px solid rgb(149, 144, 144); */
+    width: 70%;
+    border-radius: 6px;
+    /* background-color: rgb(7, 7, 7); */
+    box-shadow: 0px 0px 20px rgb(149, 144, 144);
+}
+
+#chain{
+
+    margin-top: 450px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin{
+    padding: 30px;
+}
+.admin input{
+    margin: 20px 0;
+    width: 24rem;
+}
+.miners{
+    margin: 10px;
+    width: 98%;
+    border: 1px solid rgb(197, 188, 188);
+    height: 60px;
+    border-radius: 6px;
+}
+.buttons{
+    float: right;
+}
+.email{
+    margin-left: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    font-weight: bold;
+    
+}
