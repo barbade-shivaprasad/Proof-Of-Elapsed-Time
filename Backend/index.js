@@ -9,6 +9,7 @@ const {blockmodel} = require('./models/blockModel')
 const chainModel = require('./models/ChainModel')
 const minerModel = require('./models/minerModel')
 const mongoose = require('mongoose');
+const ChainModel = require("./models/ChainModel");
 
 
 const app = express();
@@ -18,9 +19,12 @@ app.use(cors())
 
 const secretKey = "asjbksdasjdajdnkalj"
 
+let chain = new Blockchain();
+
+
 try {
     
-  mongoose.connect('mongodb://localhost:27017/poet',{
+  mongoose.connect('mongodb+srv://Shiva:Rgukt123@cluster0.juncu.mongodb.net/DPcontest?retryWrites=true&w=majority',{
       useNewUrlParser:true,
       useUnifiedTopology:true,
       family:4
@@ -122,6 +126,24 @@ app.post('/registerMiner',async(req,res)=>{
     }
 })
 
+app.get('/creategenesisblock',async(req,res)=>{
+  try{
+    let newChain = ChainModel({chain:[new blockmodel({previousHash:"0",
+      epoch_timeStamp : "123",
+      data : "Genesis block",
+      hash: "--",
+      index: 1})]})
+
+      await newChain.save();
+
+      res.send("success")
+
+  }
+  catch(err){
+    res.status(202).send("Something went wrong")
+  }
+})
+
 app.post('/loginMiner',async(req,res)=>{
     try {
       console.log(req.body)
@@ -158,7 +180,6 @@ const getRandomData = () => {
   return { data: 1000 * Math.random(), minedBy: "", timestamp: "" };
 };
 
-let chain = new Blockchain();
 
 let leaderRecieved = false;
 
