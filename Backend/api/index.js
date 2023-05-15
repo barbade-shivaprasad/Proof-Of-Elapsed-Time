@@ -276,3 +276,4 @@ io.on("connection", (socket) => {
 server.listen(5000, () => {
   console.log("Server has started at port 5000");
 });
+module.exports = app
