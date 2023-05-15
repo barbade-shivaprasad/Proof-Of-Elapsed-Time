@@ -43,7 +43,7 @@ export default function Login({ notify,setdata }) {
   const submitHandler = async (data) => {
     try {
 
-      let res = await axios.post("http://localhost:5000/loginminer", data);
+      let res = await axios.post("https://proof-of-elapsed-time.vercel.app/loginminer", data);
 
       if (res.status != 200) throw new Error(res.data);
       notify("successfully Logged in","success");

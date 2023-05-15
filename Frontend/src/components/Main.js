@@ -69,7 +69,7 @@ function Main({ notify,data,setdata }) {
 
   const getRecentBlock = async () => {
     try {
-      let res = await axios.get("http://localhost:5000/recentblock");
+      let res = await axios.get("https://proof-of-elapsed-time.vercel.app/recentblock");
       setRecentBlock(res.data);
     } catch (error) {
       console.log(error.message);
@@ -78,7 +78,7 @@ function Main({ notify,data,setdata }) {
 
   const getGenesisBlock = async () => {
     try {
-      let res = await axios.get("http://localhost:5000/chain");
+      let res = await axios.get("https://proof-of-elapsed-time.vercel.app/chain");
       setChain(res.data);
     } catch (error) {
       console.log(error.message);
@@ -118,7 +118,7 @@ function Main({ notify,data,setdata }) {
     setdata({ ...data, blocksMined: data.blocksMined+1 });
     try {
       
-      await axios.post('http://localhost:5000/mineblock',{email:data.email})
+      await axios.post('https://proof-of-elapsed-time.vercel.app/mineblock',{email:data.email})
       
     } catch (error) {
       console.log(error)

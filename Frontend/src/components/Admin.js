@@ -11,7 +11,7 @@ export const Admin = ({notify}) => {
             if(passkey == "")
             alert("Please enter passkey")
 
-            let res = await axios.post('http://localhost:5000/getminers',{passKey:passkey});
+            let res = await axios.post('https://proof-of-elapsed-time.vercel.app/getminers',{passKey:passkey});
             if(res.status != 200) throw new Error(res.data)
             setminers(res.data)
             
@@ -24,7 +24,7 @@ export const Admin = ({notify}) => {
     
     const approveMiner=async(email)=>{
         try {
-            let res = await axios.post('http://localhost:5000/approveminer',{email:email});
+            let res = await axios.post('https://proof-of-elapsed-time.vercel.app/approveminer',{email:email});
             submitHandler();
         } catch (error) {
             console.log(error)   
@@ -32,7 +32,7 @@ export const Admin = ({notify}) => {
     }
     const rejectMiner=async(email)=>{
         try {
-            let res = await axios.post('http://localhost:5000/rejectminer',{email:email});
+            let res = await axios.post('https://proof-of-elapsed-time.vercel.app/rejectminer',{email:email});
             submitHandler();
         } catch (error) {
             console.log(error)   
