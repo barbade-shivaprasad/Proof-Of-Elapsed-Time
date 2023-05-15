@@ -2,14 +2,14 @@ const http = require("http");
 const express = require("express");
 const { urlencoded } = require("express");
 const { Server } = require("socket.io");
-const Blockchain = require("./BlockChain");
-const Block = require("./Block");
+const Blockchain = require("../BlockChain");
+const Block = require("../Block");
 const cors = require('cors')
-const {blockmodel} = require('./models/blockModel')
-const chainModel = require('./models/ChainModel')
-const minerModel = require('./models/minerModel')
+const {blockmodel} = require('../models/blockModel')
+const chainModel = require('../models/ChainModel')
+const minerModel = require('../models/minerModel')
 const mongoose = require('mongoose');
-const ChainModel = require("./models/ChainModel");
+const ChainModel = require("../models/ChainModel");
 
 
 const app = express();
